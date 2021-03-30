@@ -16,3 +16,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/api/notes', 'NoteController@index');
+$router->post('/api/notes', 'NoteController@create');
+$router->get('/api/notes/{id}', 'NoteController@show');
+$router->put('/api/notes/{id}', 'NoteController@update');
+$router->delete('/api/notes/{id}', 'NoteController@delete');
